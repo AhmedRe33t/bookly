@@ -12,9 +12,7 @@ class BookApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-       theme: ThemeData(
-          scaffoldBackgroundColor: AppColors.KPrimaryColr
-        ),
+       theme: ThemeData.dark().copyWith(scaffoldBackgroundColor:  AppColors.KPrimaryColr),
         debugShowCheckedModeBanner: false,
         routerConfig: router,
     );
