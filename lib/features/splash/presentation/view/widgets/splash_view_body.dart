@@ -1,5 +1,9 @@
+import 'package:bookapp/core/services/navigation.dart';
 import 'package:bookapp/core/utility/app_assets.dart';
+import 'package:bookapp/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/instance_manager.dart';
+import 'package:get/route_manager.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -15,13 +19,20 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
 
   @override
   void initState() {
-
+      
     super.initState();
-    animationController=AnimationController(vsync: this,duration:const Duration(seconds: 2));
-    sliderTextAnimation =Tween<Offset>(begin:const Offset(0, 4) ,end:Offset.zero ).animate(animationController);
-     sliderImageAnimation =Tween<Offset>(begin:const Offset(0, -4) ,end:Offset.zero ).animate(animationController);
-   animationController.forward();
+    _initSlidingAnimated();
+    _navigateToHome();
   }
+
+  void _navigateToHome() {
+    Future.delayed(const Duration(seconds: 2),(){
+        //customNavigateAndReplaceMent(context, path: '/homeView');
+        Get.to(()=>const HomeView(),transition:Transition.circularReveal,duration:const Duration(seconds: 2));
+    });
+  }
+
+ 
   @override
   void dispose() {
     super.dispose();
@@ -56,5 +67,11 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
            
             ],
     );
+  }
+   void _initSlidingAnimated() {
+     animationController=AnimationController(vsync: this,duration:const Duration(seconds: 2));
+    sliderTextAnimation =Tween<Offset>(begin:const Offset(0, 4) ,end:Offset.zero ).animate(animationController);
+     sliderImageAnimation =Tween<Offset>(begin:const Offset(0, -4) ,end:Offset.zero ).animate(animationController);
+       animationController.forward();
   }
 }
