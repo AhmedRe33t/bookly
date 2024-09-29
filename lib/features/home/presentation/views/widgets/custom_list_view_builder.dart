@@ -8,12 +8,15 @@ class CustomListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      clipBehavior: Clip.none,
-      padding: EdgeInsets.zero,
-      scrollDirection: Axis.horizontal,
-      itemCount: 4,
-      itemBuilder: (context,index){
-        return  CustomListViewItems(width: 170.w, high: 200.h,);
-      });
+        clipBehavior: Clip.none,
+        padding: EdgeInsets.zero,
+        scrollDirection: Axis.horizontal,
+        itemCount: 4,
+        itemBuilder: (context, index) {
+          return CustomListViewItems(
+            width: 170.w,
+            high: 200.h,
+          );
+        });
   }
 }

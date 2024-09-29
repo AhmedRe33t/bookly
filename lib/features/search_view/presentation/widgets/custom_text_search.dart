@@ -6,17 +6,19 @@ class CustomSearchText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
+    return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30.0),
       child: TextField(
-        
         decoration: InputDecoration(
           enabledBorder: buildOutLineInputBoarder(),
           focusedBorder: buildOutLineInputBoarder(),
           hintText: 'Search',
-          suffixIcon: IconButton(onPressed: (){}, icon:const Icon(FontAwesomeIcons.magnifyingGlass,color: Color.fromARGB(255, 234, 228, 226),)),
-          
-          
+          suffixIcon: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                FontAwesomeIcons.magnifyingGlass,
+                color: Color.fromARGB(255, 234, 228, 226),
+              )),
         ),
       ),
     );
@@ -24,10 +26,7 @@ class CustomSearchText extends StatelessWidget {
 
   OutlineInputBorder buildOutLineInputBoarder() {
     return OutlineInputBorder(
-          borderSide:const BorderSide(
-            color: Colors.green
-          ),
-          borderRadius: BorderRadius.circular(16)
-        );
+        borderSide: const BorderSide(color: Colors.green),
+        borderRadius: BorderRadius.circular(16));
   }
 }

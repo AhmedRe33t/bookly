@@ -16,30 +16,44 @@ class DetailsBody extends StatelessWidget {
       slivers: [
         SliverFillRemaining(
           child: Padding(
-      padding:const  EdgeInsets.symmetric(horizontal: 30.0),
-      child:  Column(
-        
-        children: [
-        const   CustomAppBarDetailes(),
-           SizedBox(height: 10.h,),
-          CustomListViewItems(width: 200.w, high: 290.h,),
-          SizedBox(height: 30.h,),
-          const BookDetailsSection(),
-            SizedBox(height:37.h,),
-         const  BookAction(),
-         Expanded(child: SizedBox(height:50.h,)),
-      const  Align(
-          alignment: Alignment.bottomLeft,
-          child:  Text('you can also like ',style:AppStyle.textStyle18W600,)),
-          SizedBox(height:20.h,),
-        const  SimelarBooksListView()
-        ],
-      ),
-    ) ,
+            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+            child: Column(
+              children: [
+                const CustomAppBarDetailes(),
+                SizedBox(
+                  height: 10.h,
+                ),
+                CustomListViewItems(
+                  width: 200.w,
+                  high: 290.h,
+                ),
+                SizedBox(
+                  height: 30.h,
+                ),
+                const BookDetailsSection(),
+                SizedBox(
+                  height: 37.h,
+                ),
+                const BookAction(),
+                Expanded(
+                    child: SizedBox(
+                  height: 50.h,
+                )),
+                const Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Text(
+                      'you can also like ',
+                      style: AppStyle.textStyle18W600,
+                    )),
+                SizedBox(
+                  height: 20.h,
+                ),
+                const SimelarBooksListView()
+              ],
+            ),
+          ),
         )
       ],
     );
-    
-    
   }
 }

@@ -14,21 +14,21 @@ class BookApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   return ScreenUtilInit(
-      designSize:  Size(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      // Use builder only if you need to use library outside ScreenUtilInit context
-      builder: (_ , child) {
-    return 
-    
-    GetMaterialApp(
-      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor:  AppColors.KPrimaryColr,
-      textTheme: GoogleFonts.montserratAlternatesTextTheme(ThemeData.dark().textTheme)
-      ),
-             
-         debugShowCheckedModeBanner: false,
-         home: const SplashView(),
-    );
-  });}
+    return ScreenUtilInit(
+        designSize: Size(MediaQuery.of(context).size.width,
+            MediaQuery.of(context).size.height),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        // Use builder only if you need to use library outside ScreenUtilInit context
+        builder: (_, child) {
+          return GetMaterialApp(
+            theme: ThemeData.dark().copyWith(
+                scaffoldBackgroundColor: AppColors.KPrimaryColr,
+                textTheme: GoogleFonts.montserratAlternatesTextTheme(
+                    ThemeData.dark().textTheme)),
+            debugShowCheckedModeBanner: false,
+            home: const SplashView(),
+          );
+        });
+  }
 }

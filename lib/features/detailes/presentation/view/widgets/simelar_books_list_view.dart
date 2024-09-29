@@ -10,11 +10,14 @@ class SimelarBooksListView extends StatelessWidget {
     return SizedBox(
       height: 150.h,
       child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 10,
-        itemBuilder: (context,index){
-          return CustomListViewItems(width: 100.w, high: 100.h,);
-        }),
+          scrollDirection: Axis.horizontal,
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return CustomListViewItems(
+              width: 100.w,
+              high: 100.h,
+            );
+          }),
     );
   }
 }

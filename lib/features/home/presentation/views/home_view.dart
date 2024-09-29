@@ -10,7 +10,5 @@ class HomeView extends StatelessWidget {
       backgroundColor: Colors.teal,
       body: HomeViewBody(),
     );
-
   }
 }
-

@@ -2,7 +2,12 @@ import 'package:bookapp/core/utility/app_style.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.backgroundColor, required this.textColor,  this.borderRadius, required this.text});
+  const CustomButton(
+      {super.key,
+      required this.backgroundColor,
+      required this.textColor,
+      this.borderRadius,
+      required this.text});
   final Color backgroundColor;
   final Color textColor;
   final BorderRadius? borderRadius;
@@ -12,16 +17,16 @@ class CustomButton extends StatelessWidget {
     return SizedBox(
       height: 48,
       child: TextButton(
-        
-        onPressed: (){}, 
-      style: TextButton.styleFrom(
-        
-        backgroundColor: backgroundColor,
-        shape: RoundedRectangleBorder(borderRadius:borderRadius??BorderRadius.circular(16))
-      ),
-      child:Text(text,style: AppStyle.textStyle16W500.copyWith(color: textColor,fontWeight: FontWeight.bold),)
-      
-       ),
+          onPressed: () {},
+          style: TextButton.styleFrom(
+              backgroundColor: backgroundColor,
+              shape: RoundedRectangleBorder(
+                  borderRadius: borderRadius ?? BorderRadius.circular(16))),
+          child: Text(
+            text,
+            style: AppStyle.textStyle16W500
+                .copyWith(color: textColor, fontWeight: FontWeight.bold),
+          )),
     );
   }
 }

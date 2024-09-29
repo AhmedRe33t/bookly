@@ -5,7 +5,6 @@ import 'package:bookapp/features/home/presentation/views/widgets/custom_list_vie
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
 
@@ -13,31 +12,36 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        SliverToBoxAdapter(child: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: Column(
-        children: [
-      const CustomAppBar(),
-       SizedBox(
-        height: 250.h,
-        child:const CustomListView()),
-        SizedBox(height: 20.h,),
-      const Align(
-        alignment: Alignment.bottomLeft,
-        child:  Text('Best Seller',style: AppStyle.textStyle18W600,)),
-        SizedBox(height: 20.h,),
-      
-    
-        ],
-      ),
-    ),),
-   const SliverFillRemaining(child:Padding(
-     padding: EdgeInsets.symmetric(horizontal: 30),
-     child: BestSellerListView(),
-   ) ,)
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Column(
+              children: [
+                const CustomAppBar(),
+                SizedBox(height: 250.h, child: const CustomListView()),
+                SizedBox(
+                  height: 20.h,
+                ),
+                const Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Text(
+                      'Best Seller',
+                      style: AppStyle.textStyle18W600,
+                    )),
+                SizedBox(
+                  height: 20.h,
+                ),
+              ],
+            ),
+          ),
+        ),
+        const SliverFillRemaining(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30),
+            child: BestSellerListView(),
+          ),
+        )
       ],
     );
-    
   }
 }
-
