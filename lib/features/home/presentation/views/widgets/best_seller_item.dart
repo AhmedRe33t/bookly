@@ -40,7 +40,7 @@ class BestSellerListViewIteams extends StatelessWidget {
                    Row(children: [
                     Text('19.99 \$',style: AppStyle.textStyle20Normal.copyWith(fontWeight: FontWeight.bold),),
                   const  Spacer(),
-                     const BookRate()
+                      BookRate()
                    ],)
                 ],
               ),

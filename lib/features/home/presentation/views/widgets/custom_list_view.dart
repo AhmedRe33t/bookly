@@ -10,8 +10,8 @@ class CustomListViewItems extends StatelessWidget {
     return Container(
 
       alignment: Alignment.bottomRight,
-      height: 200.h,
-      width: 150.w,
+      height: 250.h,
+      width: 170.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         image:const DecorationImage(image: AssetImage(Assets.imagesTestImage,),fit: BoxFit.fill)
