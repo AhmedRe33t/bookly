@@ -1,9 +1,6 @@
 import 'package:bookapp/core/services/navigation.dart';
 import 'package:bookapp/core/utility/app_assets.dart';
-import 'package:bookapp/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
-import 'package:get/instance_manager.dart';
-import 'package:get/route_manager.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -28,9 +25,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void _navigateToHome() {
     Future.delayed(const Duration(seconds: 2), () {
       //customNavigateAndReplaceMent(context, path: '/homeView');
-      Get.to(() => const HomeView(),
-          transition: Transition.circularReveal,
-          duration: const Duration(seconds: 2));
+    customNavigateAndReplaceMent(context, path: '/homeView');
     });
   }
 

@@ -1,8 +1,7 @@
+import 'package:bookapp/core/routes/app_routes.dart';
 import 'package:bookapp/core/utility/app_colors.dart';
-import 'package:bookapp/features/splash/presentation/view/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -21,13 +20,13 @@ class BookApp extends StatelessWidget {
         splitScreenMode: true,
         // Use builder only if you need to use library outside ScreenUtilInit context
         builder: (_, child) {
-          return GetMaterialApp(
+          return MaterialApp.router(
             theme: ThemeData.dark().copyWith(
                 scaffoldBackgroundColor: AppColors.KPrimaryColr,
                 textTheme: GoogleFonts.montserratAlternatesTextTheme(
                     ThemeData.dark().textTheme)),
             debugShowCheckedModeBanner: false,
-            home: const SplashView(),
+           routerConfig: router,
           );
         });
   }

@@ -1,10 +1,9 @@
+import 'package:bookapp/core/services/navigation.dart';
 import 'package:bookapp/core/utility/app_assets.dart';
 import 'package:bookapp/core/utility/app_style.dart';
-import 'package:bookapp/features/detailes/presentation/view/details_view.dart';
 import 'package:bookapp/features/home/presentation/views/widgets/book_rate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/route_manager.dart';
 
 class BestSellerListViewIteams extends StatelessWidget {
   const BestSellerListViewIteams({super.key});
@@ -13,9 +12,7 @@ class BestSellerListViewIteams extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(() => const DetailsView(),
-            transition: Transition.circularReveal,
-            duration: const Duration(seconds: 2));
+       customNavigation(context, path: '/detaliesView');
       },
       child: SizedBox(
         height: 150.h,

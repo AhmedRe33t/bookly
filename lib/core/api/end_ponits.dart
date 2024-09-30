@@ -1,10 +1,8 @@
 class EndPoint {
-  static String baseUrl = "https://food-api-omega.vercel.app/api/v1/";
-  static String signIn = "user/signin";
-  static String signUp = "user/signup";
-  static String getUserDataEndPoint(id) {
-    return "user/get-user/$id";
-  }
+  static String baseUrl = "https://www.googleapis.com/books/v1/";
+  
+  static String getData = "volumes?q=subject:programming &Filtering=free-ebooks &Sorting=newest";
+  static String programingBook= "volumes?q=subject:programming &Filtering=free-ebooks ";
 }
 
 class ApiKey {
