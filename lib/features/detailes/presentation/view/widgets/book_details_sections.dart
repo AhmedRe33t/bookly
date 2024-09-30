@@ -19,16 +19,14 @@ class BookDetailsSection extends StatelessWidget {
                 SizedBox(
                   height: 30.h,
                 ),
-         Align(
-          alignment: Alignment.center,
-           child: Text(
-            
-            bookModel.volumeInfo!.title!,
-            style: AppStyle.textStyle20Normal,
-            maxLines: 2,
-            overflow:TextOverflow.ellipsis ,
-                   ),
-         ),
+         Text(
+          
+          bookModel.volumeInfo!.title!,
+          style: AppStyle.textStyle20Normal,
+          textAlign: TextAlign.center,
+          maxLines: 2,
+          overflow:TextOverflow.ellipsis ,
+                 ),
         SizedBox(
           height: 6.h,
         ),

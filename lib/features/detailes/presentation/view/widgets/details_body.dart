@@ -28,7 +28,7 @@ class DetailsBody extends StatelessWidget {
                 SizedBox(
                   height: 37.h,
                 ),
-                const BookAction(),
+                 BookAction(bookModel: bookModel,),
                 Expanded(
                     child: SizedBox(
                   height: 50.h,
