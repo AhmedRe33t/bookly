@@ -14,7 +14,7 @@ class BestSellerListViewIteams extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-       customNavigation(context, path: '/detaliesView');
+       customNavigation(context, path: '/detaliesView',extra:books );
       },
       child: SizedBox(
         height: 150.h,

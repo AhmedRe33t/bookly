@@ -3,13 +3,13 @@ import 'package:bookapp/features/detailes/presentation/view/widgets/action_butto
 import 'package:bookapp/features/detailes/presentation/view/widgets/book_details_sections.dart';
 import 'package:bookapp/features/detailes/presentation/view/widgets/custom_app_bar.dart';
 import 'package:bookapp/features/detailes/presentation/view/widgets/simelar_books_list_view.dart';
-import 'package:bookapp/features/home/presentation/views/widgets/custom_list_view.dart';
+import 'package:bookapp/features/home/data/models/books/books.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DetailsBody extends StatelessWidget {
-  const DetailsBody({super.key});
-
+  const DetailsBody({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -23,14 +23,8 @@ class DetailsBody extends StatelessWidget {
                 SizedBox(
                   height: 10.h,
                 ),
-                CustomListViewItems(
-                  width: 200.w,
-                  high: 290.h, imageUrl: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.sportskeeda.com%2Fanime%2Fis-sasuke-dead-boruto-status-explained&psig=AOvVaw0q7OH0pjEmikp6Ar_jJCpU&ust=1727749334695000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOCZyf7N6YgDFQAAAAAdAAAAABAE',
-                ),
-                SizedBox(
-                  height: 30.h,
-                ),
-                const BookDetailsSection(),
+               
+                 BookDetailsSection(bookModel:bookModel ,),
                 SizedBox(
                   height: 37.h,
                 ),
@@ -48,7 +42,7 @@ class DetailsBody extends StatelessWidget {
                 SizedBox(
                   height: 20.h,
                 ),
-                const SimelarBooksListView()
+                 SimelarBooksListView(bookModel: bookModel,)
               ],
             ),
           ),

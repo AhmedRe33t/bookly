@@ -43,6 +43,21 @@ class UserRepository {
     }
   }
 
+  Future<Either<String,List<BookModel>>> featchSimilarBooks({required String category}) async {
+    try {
+      var response = await api.get(
+        EndPoint.similarBooks,
+      );
+       List<BookModel> books=[];
+       for (var element in response["items"]) {
+         books.add(BookModel.fromJson(element));
+       }
+      return Right(books);
+    } on ServerException catch (e) {
+      return Left(e.errModel.errorMessage);
+    }
+  }
+
 
 
 }
