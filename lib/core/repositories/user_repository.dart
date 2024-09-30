@@ -28,7 +28,7 @@ class UserRepository {
   }
 
 
-  Future<Either<String, List<BookModel>>> featchFeaturesBooks( ) async {
+   Future<Either<String,List<BookModel>>> featchBestSellerBooks() async {
     try {
       final response = await api.get(
         EndPoint.programingBook,

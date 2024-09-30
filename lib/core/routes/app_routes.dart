@@ -1,5 +1,5 @@
 import 'package:bookapp/core/api/dio_consumer.dart';
-import 'package:bookapp/features/home/presentation/views/cubit/user_cubit.dart';
+import 'package:bookapp/features/home/presentation/cubit/user_cubit.dart';
 import 'package:bookapp/core/repositories/user_repository.dart';
 import 'package:bookapp/features/detailes/presentation/view/details_view.dart';
 import 'package:bookapp/features/home/presentation/views/home_view.dart';
@@ -15,10 +15,7 @@ final GoRouter router = GoRouter(routes: [
   ),
   GoRoute(
     path: '/homeView',
-    builder: (context, state) => BlocProvider(
-      create: (context) => UserCubit(UserRepository(api: DioConsumer(dio: Dio()))),
-      child: const HomeView(),
-    ),
+    builder: (context, state) => const HomeView(),
   ),
   GoRoute(
     path: '/detaliesView',
