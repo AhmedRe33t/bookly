@@ -30,7 +30,7 @@ class BookDetailsSection extends StatelessWidget {
           height: 18.h,
         ),
         BookRate(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center, bookRating: 5, count: 300,
         ),
       ],
     );

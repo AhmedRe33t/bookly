@@ -50,7 +50,7 @@ class SearchItems extends StatelessWidget {
                           .copyWith(fontWeight: FontWeight.bold),
                     ),
                     const Spacer(),
-                    BookRate()
+                    BookRate(bookRating: 5, count: 344,)
                   ],
                 )
               ],

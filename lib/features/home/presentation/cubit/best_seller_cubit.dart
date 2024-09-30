@@ -10,7 +10,7 @@ class BestSellerCubit extends Cubit<BestSellerState> {
  
   featchBestSellerBooks() async {
     emit(BestSellerStateLoading());
-    final response = await userRepository.featchNewsBooks();
+    final response = await userRepository.featchBestSellerBooks();
     response.fold(
       (errMessage) => emit(BestSellerStateFaluier(errMessage: errMessage)),
       (books) => emit(BestSellerStateSucces(books: books)),

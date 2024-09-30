@@ -1,7 +1,7 @@
 class EndPoint {
   static String baseUrl = "https://www.googleapis.com/books/v1/";
   
-  static String getData = "volumes?Filtering=free-ebooks&Sorting=newest &q=computer science";
+  static String getData = "volumes?Filtering=free-ebooks&Sorting=newest &q=movies";
   static String programingBook= "volumes?q=subject:programming &Filtering=free-ebooks ";
 }
 

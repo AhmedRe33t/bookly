@@ -1,5 +1,6 @@
 import 'package:bookapp/features/detailes/presentation/view/details_view.dart';
 import 'package:bookapp/features/home/presentation/views/home_view.dart';
+import 'package:bookapp/features/search_view/presentation/view/search_view.dart';
 import 'package:bookapp/features/splash/presentation/view/splash_view.dart';
 import 'package:go_router/go_router.dart';
 
@@ -15,5 +16,10 @@ final GoRouter router = GoRouter(routes: [
   GoRoute(
     path: '/detaliesView',
     builder: (context, state) => const DetailsView(),
+  ),
+
+  GoRoute(
+    path: '/searchView',
+    builder: (context, state) => const SearchView(),
   ),
 ]);

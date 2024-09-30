@@ -1,4 +1,6 @@
 
+import 'package:bookapp/core/widgets/custom_shimmer_category.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CustomListViewItems extends StatelessWidget {
@@ -11,18 +13,16 @@ class CustomListViewItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return   Padding(
-      padding: const EdgeInsets.only(right: 10.0),
-      child: Container(
-        alignment: Alignment.bottomRight,
-        height: high,
-        width: width,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            image:  DecorationImage(
-                image: NetworkImage(imageUrl),
-          
-                fit: BoxFit.fill)),
-      ),
+      padding:const  EdgeInsets.only(right: 10.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16),
+        child: CachedNetworkImage(
+          fit: BoxFit.fill,
+        imageUrl: imageUrl,
+        errorWidget:(context, url, error) =>const Icon(Icons.error) ,
+        placeholder: (context, url) =>const CustomShimmerCategory(),
+        ),
+      )
     );
   }
 }

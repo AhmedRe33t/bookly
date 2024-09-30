@@ -4,9 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BookRate extends StatelessWidget {
-  BookRate({super.key, this.mainAxisAlignment = MainAxisAlignment.center});
+  BookRate({super.key, this.mainAxisAlignment = MainAxisAlignment.center, required this.bookRating, required this.count});
+
   MainAxisAlignment mainAxisAlignment;
+  final  int bookRating;
+  final int count;
   @override
+
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: mainAxisAlignment,
@@ -18,8 +22,8 @@ class BookRate extends StatelessWidget {
         SizedBox(
           width: 6.w,
         ),
-        const Text(
-          '4.8',
+         Text(
+          bookRating.toString(),
           style: AppStyle.textStyle16W500,
         ),
         SizedBox(
@@ -28,7 +32,7 @@ class BookRate extends StatelessWidget {
         Opacity(
             opacity: .5,
             child: Text(
-              '(245)',
+              '(${count.toString()})',
               style: AppStyle.textStyle14Normal
                   .copyWith(color: const Color.fromARGB(255, 204, 202, 202)),
             )),

@@ -1,3 +1,4 @@
+import 'package:bookapp/core/services/navigation.dart';
 import 'package:bookapp/core/utility/app_assets.dart';
 import 'package:bookapp/features/search_view/presentation/view/search_view.dart';
 import 'package:flutter/material.dart';
@@ -20,8 +21,7 @@ class CustomAppBar extends StatelessWidget {
           ),
           IconButton(
               onPressed: () {
-                Get.off(() => const SearchView(),
-                    transition: Transition.downToUp);
+               customNavigation(context, path: '/searchView');
               },
               icon: const Icon(
                 FontAwesomeIcons.magnifyingGlass,
