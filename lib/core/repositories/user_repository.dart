@@ -14,11 +14,11 @@ class UserRepository {
 
   Future<Either<String, List<BookModel>>> featchNewsBooks( ) async {
     try {
-      final response = await api.get(
+       var response = await api.get(
         EndPoint.getData,
       );
        List<BookModel> books=[];
-       for (var element in response) {
+       for (var element in response["items"]) {
          books.add(BookModel.fromJson(element));
        }
       return Right(books);
@@ -30,11 +30,11 @@ class UserRepository {
 
    Future<Either<String,List<BookModel>>> featchBestSellerBooks() async {
     try {
-      final response = await api.get(
+      var response = await api.get(
         EndPoint.programingBook,
       );
        List<BookModel> books=[];
-       for (var element in response) {
+       for (var element in response["items"]) {
          books.add(BookModel.fromJson(element));
        }
       return Right(books);

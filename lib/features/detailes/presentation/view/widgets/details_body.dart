@@ -25,7 +25,7 @@ class DetailsBody extends StatelessWidget {
                 ),
                 CustomListViewItems(
                   width: 200.w,
-                  high: 290.h,
+                  high: 290.h, imageUrl: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.sportskeeda.com%2Fanime%2Fis-sasuke-dead-boruto-status-explained&psig=AOvVaw0q7OH0pjEmikp6Ar_jJCpU&ust=1727749334695000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOCZyf7N6YgDFQAAAAAdAAAAABAE',
                 ),
                 SizedBox(
                   height: 30.h,

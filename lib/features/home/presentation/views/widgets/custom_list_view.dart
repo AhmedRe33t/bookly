@@ -1,29 +1,28 @@
 
-import 'package:bookapp/features/home/presentation/cubit/user_cubit.dart';
-import 'package:bookapp/features/home/presentation/cubit/user_state.dart';
-import 'package:bookapp/core/utility/app_assets.dart';
 import 'package:flutter/material.dart';
 
 class CustomListViewItems extends StatelessWidget {
   const CustomListViewItems(
-      {super.key, required this.width, required this.high});
+      {super.key, required this.width, required this.high, required this.imageUrl});
   final double width;
   final double high;
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
-    return   Container(
-      alignment: Alignment.bottomRight,
-      height: high,
-      width: width,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          image:const  DecorationImage(
-              image: AssetImage(
-                
-                Assets.imagesTestImage,
-              ),
-              fit: BoxFit.fill)),
+    return   Padding(
+      padding: const EdgeInsets.only(right: 10.0),
+      child: Container(
+        alignment: Alignment.bottomRight,
+        height: high,
+        width: width,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            image:  DecorationImage(
+                image: NetworkImage(imageUrl),
+          
+                fit: BoxFit.fill)),
+      ),
     );
   }
 }
