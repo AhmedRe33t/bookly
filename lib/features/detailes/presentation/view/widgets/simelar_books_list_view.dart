@@ -1,3 +1,4 @@
+import 'package:bookapp/core/services/navigation.dart';
 import 'package:bookapp/core/widgets/custom_shimmer_category.dart';
 import 'package:bookapp/core/widgets/custom_toast.dart';
 import 'package:bookapp/features/detailes/presentation/cubit/detalies_cubit.dart';
@@ -26,11 +27,16 @@ class SimelarBooksListView extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: 10,
               itemBuilder: (context, index) {
-                return CustomListViewItems(
-                  width: 100.w,
-                  high: 100.h,
-                  imageUrl:
-                      state.books[index].volumeInfo!.imageLinks!.thumbnail??'',
+                return InkWell(
+                  onTap: (){
+                    customNavigation(context, path: '/detaliesView',extra: state.books[index]);
+                  },
+                  child: CustomListViewItems(
+                    width: 100.w,
+                    high: 100.h,
+                    imageUrl:
+                        state.books[index].volumeInfo!.imageLinks!.thumbnail??'',
+                  ),
                 );
               }),
         ):Container();

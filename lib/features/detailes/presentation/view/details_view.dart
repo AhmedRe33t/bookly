@@ -22,6 +22,7 @@ class _DetailsViewState extends State<DetailsView> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      backgroundColor:const Color.fromARGB(255, 19, 62, 41),
       body: SafeArea(child: DetailsBody(bookModel: widget.bookModel,)),
     );
   }
